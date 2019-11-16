@@ -33,16 +33,11 @@ function generator () {
 
     // input password length
     var userLength = document.getElementById('pswdlength').value;
-    // possible values
-    //var values = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~"';
 
     var password = '';
 
     // create for loop to choose password characters
     for (var i = 0; i <= userLength; i++ ) {
-      console.log(userLength);
-      console.log(upper);
-      console.log(lower);
       if (upper) {
         password += upperStr.charAt(Math.floor(Math.random() * Math.floor(upperStr.length - 1)));
         i++
@@ -86,7 +81,6 @@ function generator () {
    
     // add password to textbox/display area
     document.getElementById('passwordArea').value = password;
-    console.log('orange');
 }
 
   // click button to copy password
