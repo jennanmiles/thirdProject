@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <link href="https://fonts.googleapis.com/css?family=Literata:400,500,700&display=swap" rel="stylesheet">
+
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <h2>Generate a Password</h2>
+      
+      <!-- user input -->
+      <form class="form" id="form">
+        <h3>Please select from the list below:</h3>
+        <div class="rulesInput">
+          <input id="checkUppercase" type="checkbox">
+          <label>Uppercase (ABCDEFGHIJKLMNOPQRSTUVWXYZ)</label>
+        </div>
+        <div class="rulesInput">
+          <input id="checkLowercase" type="checkbox">
+          <label>Lowercase (abcdefghijklmnopqrstuvwxyz)</label>
+        </div>
+        <div class="rulesInput">
+          <input id="checkNumbers" type="checkbox">
+          <label>Numbers (1234567890)</label>
+        </div>
+        <div class="rulesInput">
+          <input id="checkSpecial" type="checkbox">
+          <label>Special Characters (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~")</label>
+        </div>        
+        <div class="rulesInput">
+            <input id="checkSpace" type="checkbox">
+            <label>Space ( )</label>
+        </div> 
+        <div class="rulesInput">      
+          <input type="number" min="8" max="128" onblur="notValid()" name="pswdlength" id="pswdlength" pattern="\d*" />
+          <label>Length (8 - 128 characters)</label>
+        </div>
+      
+        <!-- generate / buttons -->
+        <textarea
+          readonly
+          id="passwordArea"
+          placeholder="Your Secure Password"
+          aria-label="Generated Password"
+        ></textarea>
+        <div class="buttonWrapper">
+          <button id="generate" type="button" onclick="generator()">Generate</button>
+          <button id="copy" type="button" onclick="copyPassword()">Copy to Clipboard</button>
+        </div>
+      </div>
+
+  </form>  
+
+    <!-- js -->
+    <script src="scripts.js"></script>
+  </body>
+</html>
